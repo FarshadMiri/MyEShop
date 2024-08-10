@@ -1,0 +1,28 @@
+﻿@model DetailsViewModel
+
+
+
+<div>
+    <h1 class="display-5">@Model.product.ProductName</h1>
+    <hr />
+    <img src="@($"/Images/{Model.product.ProductId}.jpg")"
+         alt="@Model.product.ProductName"
+         class="img-thumbnail" />
+    <p class="py-5 text-justify">@Model.product.Description</p>
+    <p>قیمت :@Model.product.Item.Price</p>
+    <dl>
+        @foreach (var item in Model.categories)
+        {
+            <dt><a>@item.CtegoryName</a></dt>
+            <dd>@item.Description</dd>
+        }
+    </dl>
+    <div>
+        <a class="btn btn-primary"
+           asp-action="AddToCart"
+           asp-controller="Home"
+           asp-route-itemid="@Model.product.ItemId">افزودن به  سبد خرید </a>
+    </div>
+</div>
+
+

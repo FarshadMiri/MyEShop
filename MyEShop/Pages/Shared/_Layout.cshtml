@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/bootstrap.rtl.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/admin.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <header>
+        <a href="/">Admin</a>
+    </header>
+    <div class="row">
+       <div class="col-md-2">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="nav-item">
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+       </div>
+        <div class="col-md-10">
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("Scripts",false)
+</body>
+</html>
